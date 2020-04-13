@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('role_id')->default(1);
+            $table->unsignedBigInteger('image_id')->default(2);
             $table->text('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -31,6 +32,7 @@ class CreateUsersTable extends Migration
                 ->on('roles')
                 ->onDelete('cascade');
         });
+
     }
 
     /**

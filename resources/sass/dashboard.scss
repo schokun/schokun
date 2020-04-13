@@ -1,0 +1,49 @@
+ul, li {
+    list-style: none;
+}
+.dashboardSidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #7386d5;
+    color: #fff;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+.dashboardSidebar a {
+    color: #fff;
+}
+.dashboardSidebar a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.dash-sidebar-header {
+    padding: 20px;
+    background: #6d7fcc;
+}
+h3 {
+    font-size: 28px;
+}
+small{
+    font-size: 22px;
+}
+
+.dashboardSidebar ul {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+.dashboardSidebar ul li a {
+    padding: 15px 10px;
+    font-size: 1.1em;
+    display: block;
+    transition: all .3s;
+}
+.dashboardSidebar ul li a:hover {
+    color: #7386d5;
+    background: #fff;
+}

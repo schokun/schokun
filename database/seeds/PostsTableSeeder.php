@@ -13,7 +13,8 @@ class PostsTableSeeder extends Seeder
     {
         foreach (\App\Models\User::all() as $user) {
             factory(\App\Models\Post::class, 30)->create([
-                'user_id' => $user->id
+                'user_id' => $user->id,
+                'category_id' => 1
             ]);
         }
     }

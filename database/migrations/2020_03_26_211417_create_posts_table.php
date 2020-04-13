@@ -16,8 +16,12 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('category_id')->default(1);
+            $table->unsignedBigInteger('image_id')->default(1);
             $table->text('title');
+            $table->string('slug')->unique();
             $table->text('text');
+            $table->integer('total_views')->default(0);
             $table->timestamps();
         });
 
@@ -26,6 +30,14 @@ class CreatePostsTable extends Migration
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
+                ->onDelete('cascade');
+        });
+
+        // Описание внешних ключей.
+        Schema::table('posts', function (Blueprint $table) {
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('categories')
                 ->onDelete('cascade');
         });
     }
