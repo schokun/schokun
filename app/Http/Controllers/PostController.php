@@ -17,9 +17,14 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        $posts = Post::filter($request)->orderByDesc('id')->with('likes' , 'image' , 'user')->paginate(3);
+        $posts = Post::orderByDesc('id')
+            ->with('likes' , 'image' , 'user')
+            ->where('moderate' , 1)
+            ->paginate(3);
 
-        return view('home.index', compact('posts'));
+        $categories = \DB::table('categories')->select()->get();
+
+        return view('home.index', compact('posts' , 'categories'));
     }
 
     /**
@@ -30,12 +35,7 @@ class PostController extends Controller
      */
     public function show($slug)
     {
-        $post = Post::with('image', 'comments.children' , 'likes')
-            ->where('slug', $slug)
-            ->get()
-            ->first();
-        $post->increment('total_views');
-
+        $post = Post::getWithRelations($slug);
 
         return view('post.index', compact('post'));
     }

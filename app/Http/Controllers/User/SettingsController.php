@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Requests\User\UpdateRequest;
-use App\Models\Image;
 use Illuminate\Http\Response;
 
 class SettingsController extends IndexController

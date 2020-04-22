@@ -4,15 +4,13 @@
             <div class="user-comment d-flex mb-5 @if ($res->parent_id)  sub_comment @endif">
                 <div>
                     <div class="user-photo">
-                        <img class="w-100"
-                             src="http://1.gravatar.com/avatar/db545eb0352e0b2cd6d15b304783dcc9?s=120&d=mm&r=g"
-                             alt="">
+                        <img class="w-100" src="/storage/{{$user->image->path}}" alt="">
                     </div>
                 </div>
                 <div>
                     <div class="user-name"> {{ $res->user->name }}</div>
                     <div class="comment-time">
-                        {{ $res->instanceTime($res->created_at) }}
+                        {{ $res->Time }}
                     </div>
                     <div class="user-comment mt-1"><p>
                             <span class="answer_name">{{ $res->name }}</span>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Throwable as ThrowableAlias;
 use Response;
@@ -19,8 +20,11 @@ class CommentsController extends Controller
      */
     public function store()
     {
+        $id = \Auth::user()->id;
         $res = Comment::add();
-        $html = View('post.ajax.comment', ['res' => $res['comment']])->render();
+        $user = User::with('image')->where('id' , $id)->get()->first();
+
+        $html = View('post.ajax.comment', ['res' => $res['comment'] , 'user' => $user ])->render();
 
         return Response::json(['html' => $html , 'count' => $res['count']]);
     }

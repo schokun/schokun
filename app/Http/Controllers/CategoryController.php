@@ -7,9 +7,13 @@ class CategoryController extends Controller
 {
     public function __invoke($category)
     {
-        $category =  \DB::table('categories')->where('name' , $category)->get()->first();
-        $posts = Post::where('category_id' , $category->id)->paginate(2);
+        $categories = \DB::table('categories')->with('posts')->select()->get();
 
-        return view('home.category' , compact('posts'));
+        $category =  \DB::table('categories')->where('name' , $category)->get()->first();
+        $posts = Post::where('category_id' , $category->id)
+            ->where('moderate' , 1)
+            ->paginate(2);
+
+        return view('home.category' , compact('posts' , 'categories'));
     }
 }

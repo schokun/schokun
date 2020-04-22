@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\Dashboard;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -10,7 +10,11 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::paginate(5);
+        if (request()->input('filter') == 'true') {
+            $users = User::orderBy('name')->paginate(5);
+        }else{
+            $users = User::paginate(5);
+        }
 
         return response()->json($users);
     }

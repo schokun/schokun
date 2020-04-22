@@ -27,8 +27,11 @@ nav a:hover {
 }
 
 .auth a {
-    color: rgba(255, 255, 255, .5);
     margin-right: 40px;
+    font-family: 'Ubuntu', sans-serif;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    font-size: 17px;
 }
 
 .project-box {
@@ -164,12 +167,26 @@ nav a:hover {
 
 .exitBtn {
     background: transparent;
-    color: #eee;
-    font-size: 15px;
     border: 1px solid;
     padding: 5px 20px;
     border-radius: 5px;
     transition: all .5s;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.5);
+}
+.category_btn {
+    color: #6c6c6c;
+    background-color: #e2e2e2;
+    border-color: #dbdbdb;
+}
+.category_btn:hover {
+    color: #f63a3a
+
+}
+.category-wrap {
+    margin-bottom: 50px;
 }
 
 .exitBtn:hover {
@@ -769,7 +786,7 @@ p {
 
 .category-link a {
     margin: 15px 10px;
-    width: 80px;
+    min-width: 80px;
 }
 
 .category-link {
@@ -871,14 +888,45 @@ p {
 .header-nav {
     height: 80px;
     z-index: 5555522;
+
+}
+.header-nav ul li a {
+    font-family: 'Ubuntu', sans-serif;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    margin-left: 35px;
+    font-size: 17px;
+
+}
+.header-nav ul li:nth-child(1) {
+    margin-left: 0;
+}
+.header-nav ul li {
+    position: relative;
+}
+
+.header-nav ul li:not(:last-child):after {
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 2px;
+    transform: rotate(108deg);
+    right: -13px;
+    top: 22px;
+    background: #b03939;
 }
 .header-nav .logo {
-    width: 200px;
+    width: 150px;
 }
 .header-nav .logo img {
     width: 100%
 }
-
+main {
+    min-height: 500px;
+}
+#delPost {
+    margin-top: 100px;
+}
 @keyframes moveHeart {
     0% {
         background-position: left;

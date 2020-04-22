@@ -3,4 +3,4 @@ require('./custom');
 require('./ajax');
 
 
-require('./Vue/app');
+

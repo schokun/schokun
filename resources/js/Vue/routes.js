@@ -3,8 +3,8 @@ import users from './components/users/UsersComponent';
 import feedback from './components/feedback/FeedbackComponent'
 import userCreate from './components/users/UsersComponent'
 import post from './components/post/PostComponent'
-import Posts from './components/post/PostInfoComponent'
-import createPost from './components/post/CreatePostComponent'
+import PostsInfo from './components/post/PostInfoComponent'
+import categories from './components/categories/CategoriesComponent'
 
 
 export default new VueRouter({
@@ -30,10 +30,16 @@ export default new VueRouter({
             name: 'post',
         },
         {
-            path: '/Dashboard/post/create',
-            component: createPost,
-            name: 'createPost'
+            path: '/Dashboard/post/:id/',
+            component: PostsInfo,
+            name: 'PostsInfo',
         },
+        {
+          path: '/Dashboard/categories',
+          component: categories,
+          name: 'categories'
+        }
+
 
     ],
     mode: 'history'

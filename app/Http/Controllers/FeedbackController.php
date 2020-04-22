@@ -8,7 +8,7 @@ class FeedbackController extends Controller
 {
     public function index()
     {
-        $feedBacks = Feedback::orderByDesc('id')->get();
+        $feedBacks = Feedback::orderByDesc('id')->paginate(10);
         \DB::table('Feedback')->update(['new' => 0]);
 
         return response()->json($feedBacks);

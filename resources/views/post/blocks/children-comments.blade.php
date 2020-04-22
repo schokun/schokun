@@ -3,14 +3,14 @@
         <div class="sub_comment-wrap">
             <div class="d-flex">
                 <div>
-                    <div class="user-photo"><img class="w-100"
-                                                 src="http://1.gravatar.com/avatar/db545eb0352e0b2cd6d15b304783dcc9?s=120&d=mm&r=g"
-                                                 alt=""></div>
+                    <div class="user-photo">
+                        <img class="w-100"   src="/storage/{{$comment->user->image->path}}" alt="">
+                    </div>
                 </div>
                 <div>
                     <div class="user-name"> {{ $c->user->name }}</div>
                     <div class="comment-time">
-                        {{ $comment->instanceTime($c->created_at) }}
+                        {{ $c->Time }}
                     </div>
                     <div class="user-comment mt-1">
                         <p>

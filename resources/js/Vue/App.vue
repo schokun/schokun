@@ -1,5 +1,6 @@
 <template>
     <div class="d-flex">
+        <div id="my_captcha_form"></div>
         <sidebar></sidebar>
         <router-view></router-view>
     </div>

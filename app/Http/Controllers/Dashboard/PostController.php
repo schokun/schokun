@@ -1,23 +1,27 @@
 <?php
 
-namespace App\Http\Controllers\Api\Dashboard;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Http\Requests\Post\StoreRequest;
+use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
-
-class CategoryController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
+     * @return Response
      */
     public function index()
     {
-        $categories = Category::all();
+        $posts = Post::with('user', 'category')
+            ->orderByDesc('id')
+            ->paginate(10);
 
-        return response()->json($categories);
+        return response()->json($posts);
     }
 
     /**
@@ -27,13 +31,12 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @return Response
      */
     public function store(Request $request)
@@ -44,18 +47,20 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return Response
+     * @param $id
+     * @return void
      */
     public function show($id)
     {
-        //
+        $post = Post::with('category')->find($id);
+
+        return response()->json($post);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function edit($id)
@@ -66,23 +71,30 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param Request $request
+     * @param int $id
      * @return Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::find($id);
+        $data = $request->body;
+        $post->update($data);
+
+        return response()->json($post);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function destroy($id)
     {
-        //
+        Post::find($id)->delete();
+        $posts = Post::with('user', 'category')->paginate(10);
+
+        return response()->json($posts);
     }
 }

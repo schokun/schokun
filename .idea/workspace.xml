@@ -2,56 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81018c57-a73d-4070-ade4-21288f055ae5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.styleci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.styleci.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Dashboard/CategoryController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Dashboard/HomeController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Dashboard/PostController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Dashboard/UserController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FeedbackController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FeedbackController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostInfoController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/SettingsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/StatsController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Comment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Review.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/PostFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/PostFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ReviewtFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_26_211416_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_26_211416_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_26_211417_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_26_211417_create_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_26_211554_create_reviews_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/PostsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PostsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/ReviewsTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Vue/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Vue/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Vue/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Vue/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Vue/components/feedback/FeedbackComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Vue/components/feedback/FeedbackComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Vue/components/modal/User/DeleteComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Vue/components/modal/User/DeleteComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Vue/components/post/CreatePostComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Vue/components/post/PostComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Vue/components/post/PostComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Vue/components/post/PostInfoComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Vue/components/post/PostInfoComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Vue/components/sidebar/SidebarComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Vue/components/sidebar/SidebarComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Vue/components/users/UsersComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Vue/components/users/UsersComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Vue/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Vue/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Vue/store/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Vue/store/Post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Vue/store/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Vue/store/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/ajax.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/passwords.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/passwords.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/custom.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_custom.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/postInfo.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/custom.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/reg.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/blocks/categoryLink.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/blocks/categoryLink.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header/nav/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header/nav/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/post/ajax/comment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/ajax/comment.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/post/blocks/children-comments.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/blocks/children-comments.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/post/blocks/comment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/blocks/comment.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/post/card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/card.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/blocks/nav/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/blocks/nav/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/post/blocks/form/field.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/post/blocks/form/field.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/post/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/stats/index.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
@@ -264,7 +268,10 @@
       <workItem from="1586508234260" duration="17435000" />
       <workItem from="1586582962903" duration="54789000" />
       <workItem from="1586699183626" duration="27187000" />
-      <workItem from="1586770086820" duration="21610000" />
+      <workItem from="1586770086820" duration="26722000" />
+      <workItem from="1586886354871" duration="10108000" />
+      <workItem from="1586948395889" duration="22327000" />
+      <workItem from="1587126005808" duration="109000" />
     </task>
     <servers />
   </component>

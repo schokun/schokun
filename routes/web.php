@@ -14,7 +14,7 @@
 
 Route::get('/', 'PostController@index')->name('home');
 Route::get('/post/{slug}', 'PostController@show')->name('post.show');
-Route::get('/category/{category}', 'CategoryController')->name('category.index');
+Route::get('/category/{category}', 'CategoryController')->name('category.home.index');
 Route::post('/feedback', 'FeedbackController@store')->name('feedback.store');
 
 Auth::routes();
@@ -29,13 +29,6 @@ Route::name('auth.')
             ->namespace('user')
             ->group(function () {
                 Route::resource('/post', 'PostController');
-            });
-
-        //user-stats
-        Route::prefix('user')
-            ->namespace('user')
-            ->group(function () {
-                Route::get('/stats', 'StatsController')->name('stats');
             });
 
         //user-settings
@@ -70,27 +63,18 @@ Route::name('auth.')
 //Админка
 Route::middleware(['role:Админ'])
     ->group(function () {
-        Route::get('Dashboard/{any}', 'Api\Dashboard\HomeController@index')
+        Route::get('Dashboard/{any}', 'Dashboard\HomeController@index')
             ->where('any', '.*')
             ->name('dashboard');
+
         Route::get('/admin', 'Api\Dashboard\UserController@index');
-    });
-
-//Админка
-Route::middleware(['role:Админ'])
-    ->group(function () {
-
-
         Route::get('/admin/feedBacks', 'FeedbackController@index');
         Route::get('/admin/feedBacks', 'FeedbackController@index');
-
-        Route::resource('/admin/users', 'Api\Dashboard\UserController');
-        Route::get('/admin/posts/users' , 'Api\Dashboard\UserController@getUsersForCreate');
-        Route::resource('/admin/posts', 'Api\Dashboard\PostController');
-        Route::resource('/admin/category', 'Api\Dashboard\CategoryController');
-
-
-
+        Route::resource('/admin/users', 'Dashboard\UserController');
+        Route::get('/admin/posts/users' , 'Dashboard\UserController@getUsersForCreate');
+        Route::resource('/admin/posts', 'Dashboard\PostController');
+        Route::resource('/admin/category', 'Dashboard\CategoryController');
     });
+
 
 

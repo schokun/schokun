@@ -13,6 +13,7 @@ class IndexController extends Controller
     {
         $this->middleware(function ($request, $next) {
              $this->userInfo = User::find(Auth::user()->id);
+
             return $next($request);
         });
     }

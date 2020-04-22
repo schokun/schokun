@@ -17,7 +17,7 @@
                 {{ $post->user->name }}
             </div>
             <div class="post-date">
-                <i class="far fa-calendar-alt"></i> {{ $post->instanceTime($post->created_at) }}
+                <i class="far fa-calendar-alt"></i> {{ $post->Time }}
             </div>
             @if($post->isLike($post->id) == 'like')
                 <div class="like-action like">
@@ -31,7 +31,7 @@
                 </div>
             @endif
             <div class="comments">
-                {{ $post->comments_count()}} <i class="fas fa-comments"></i>
+              <span class="count_comment-val">{{ $post->comments_count()}} </span> <i class="fas fa-comments"></i>
             </div>
             <div class="total_views">
                 {{ $post->total_views }}  <i class="far fa-eye"></i>

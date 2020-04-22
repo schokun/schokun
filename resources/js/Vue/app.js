@@ -7,10 +7,6 @@ import store from './store'
 
 window.Vue = require('vue');
 
-//Toaster
-// import Toaster from 'v-toaster'
-// import 'v-toaster/dist/v-toaster.css';
-// Vue.use(Toaster, {timeout: 5000});
 
 Vue.component('pagination', require('laravel-vue-pagination')).default;
 import VueToast from 'vue-toast-notification';

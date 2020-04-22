@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
-use phpDocumentor\Reflection\Types\Self_;
+use Carbon\Carbon;
 use PhpParser\Builder;
 use Illuminate\Support\Str;
 
@@ -34,6 +34,19 @@ class Comment extends Model
     public function countComments(){
         return $this->post->comments_count();
     }
+
+
+    /**
+     *
+     * @param string $value
+     * @return string
+     */
+    public function getTimeAttribute($value)
+    {
+        $value = $this->created_at;
+        return Carbon::instance($value)->diffForHumans();
+    }
+
 
     //Мутатор
 

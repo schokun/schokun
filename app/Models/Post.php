@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
-
+use Carbon\Carbon;
 
 
 class Post extends Model
@@ -18,7 +18,7 @@ class Post extends Model
      * @var array
      */
     protected $fillable = [
-        'category_id' ,  'title', 'text' , 'image_id'
+        'category_id', 'title', 'text', 'image_id', 'moderate'
     ];
 
     public function user()
@@ -58,13 +58,24 @@ class Post extends Model
 
     /**
      *
-     * @param  string  $value
+     * @param string $value
      * @return string
      */
     public function getShortTitleAttribute($value)
     {
         $value = $this->title;
-        return trim(mb_substr($value, 0 , 20).'...');
+        return trim(mb_substr($value, 0, 20) . '...');
+    }
+
+    /**
+     *
+     * @param string $value
+     * @return string
+     */
+    public function getTimeAttribute($value)
+    {
+        $value = $this->created_at;
+        return Carbon::instance($value)->diffForHumans();
     }
 
     public function setTitleAttribute($value)
@@ -85,8 +96,8 @@ class Post extends Model
         $post->user_id = $user_id;
         $post->title = $request['title'];
         $post->text = $request['text'];
-        if(request()->hasFile('image')){
-            $post->image_id = Image::add($request['image'] , 'post');
+        if (request()->hasFile('image')) {
+            $post->image_id = Image::add($request['image'], 'post');
         }
         $post->category_id = $request['category_id'];
         $post->save();
@@ -100,7 +111,7 @@ class Post extends Model
      */
     public function is_post_author($post_id): bool
     {
-        if(!Auth::check()) return false;
+        if (!Auth::check()) return false;
 
         $post = self::find($post_id);
 
@@ -119,7 +130,7 @@ class Post extends Model
      */
     public function is_comment_author($comment_id): bool
     {
-        if(!Auth::check()) return false;
+        if (!Auth::check()) return false;
 
         $comment = $this->comments()->find($comment_id);
 
@@ -130,27 +141,7 @@ class Post extends Model
         return false;
     }
 
-    /**
-     * Фильтрация постов.
-     * @param Builder $query ,
-     * @param $request
-     * @return Builder $query
-     */
-    public function scopeFilter($query, $request)
-    {
-        if ($request->filled('category')) {
-            $query->where('category_id', $request->category);
-        }
-        if ($request->filled('data_append')) {
-           if($request->data_append == 'new') {
-               $query->orderByDesc('id');
-           }else{
-               $query->orderBy('id');
-           }
-        }
 
-        return $query;
-    }
 
 
     /**
@@ -162,17 +153,36 @@ class Post extends Model
      */
     public function isLike($post_id)
     {
-       if(auth()->check()){
-           $user_id = auth()->user()->id;
-           $count = Like::query()
-               ->where('post_id', $post_id)
-               ->where('user_id', $user_id)
-               ->count();
-           if($count == 1) {
-               return 'dislike';
-           }
-       }
+        if (auth()->check()) {
+            $user_id = auth()->user()->id;
+            $count = Like::query()
+                ->where('post_id', $post_id)
+                ->where('user_id', $user_id)
+                ->count();
+            if ($count == 1) {
+                return 'dislike';
+            }
+        }
 
-       return 'like';
+        return 'like';
     }
+
+
+    /**
+     * @param Builder $query ,
+     * @param $slug
+     *
+     * @return Builder $query
+     */
+    public function scopeGetWithRelations($query , $slug)
+    {
+        $query->increment('total_views');
+        $query->with('image', 'comments.children', 'likes')
+            ->where('slug', $slug)
+            ->get()
+            ->first();
+
+        return $query->get()->first();
+    }
+
 }

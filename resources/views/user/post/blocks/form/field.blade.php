@@ -5,6 +5,7 @@
 <div class="form-group">
     <label for="theme">Выберите изображение</label>
     <input type="file" class="form-control" name="image" id="theme">
+    <small class="form-text text-muted">Мы поставим свою картинку если не выберите.</small>
 </div>
 <div class="form-group">
     <label for="category">Выберите категорию</label>
@@ -29,5 +30,5 @@
 </div>
 <div class="form-group">
     <label for="body_post">Содержимое поста</label>
-    <textarea name="text" class="form-control" id="body_post" rows="3">{{ $post->text ?? '' }}</textarea>
+    <textarea name="text" class="form-control" id="body_post" rows="10">{{ $post->text ?? '' }}</textarea>
 </div>

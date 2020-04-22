@@ -9,12 +9,15 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="(item , index) of feedBacks" :key="index" :class="{ newItem: item.new }">
+            <tr v-for="(item , index) of feedBacks.data" :key="index" :class="{ newItem: item.new }">
                 <th scope="row">{{ index + 1}}</th>
                 <td>{{ item.email}}</td>
                 <td>{{ item.created_at}}</td>
             </tr>
             </tbody>
+            <tr class="pagination">
+                <pagination :data="feedBacks" @pagination-change-page="getFeedBacks"></pagination>
+            </tr>
         </table>
     </div>
 </template>
@@ -27,9 +30,17 @@
                 return this.$store.getters.feedBacks
             },
         },
+        methods: {
+            getFeedBacks(page = 1) {
+                this.$store.dispatch('feedBacks', page)
+            },
+        },
+
         created() {
-            this.$store.dispatch('feedBacks');
+            this.getFeedBacks()
         }
+
+
     }
 </script>
 
@@ -45,7 +56,8 @@
     .container {
         max-width: 1770px!important
     }
-    .newItem {
-        background: cornsilk;
+    .pagination {
+        position: absolute;
+        top: 290px;
     }
 </style>

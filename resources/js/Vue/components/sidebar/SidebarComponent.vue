@@ -19,6 +19,9 @@
                     <li>
                         <router-link active-class="active" tag="a" :to="{ name: 'post'}">Посты</router-link>
                     </li>
+                    <li>
+                        <router-link active-class="active" tag="a" :to="{ name: 'categories'}">Категории</router-link>
+                    </li>
                 </ul>
             </div>
         </div>

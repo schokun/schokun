@@ -1,7 +1,7 @@
 export default {
     state: {
         users: {},
-        feedBacks: [],
+        feedBacks: {},
         user: {},
         massage: [],
         massageStatus: []
@@ -31,10 +31,21 @@ export default {
                     r => context.commit('changeUser' , r.data)
                 )
         },
-        feedBacks(context){
-            axios.get('/admin/feedBacks')
+
+        feedBacks(context , page){
+            axios.get('/admin/feedBacks/?page=' + page)
                 .then( r => context.commit('feedBacks' , r.data))
         },
+
+        filter(cnt , payload) {
+            axios.get('/admin/users' , {
+                params: {
+                    filter: payload.sort
+                }
+            })
+                .then( r => cnt.commit('changeUser' , r.data) )
+        },
+
         createUser(context, payload) {
             axios.post('/admin/users' , {
                 body: payload
@@ -54,9 +65,8 @@ export default {
             state.feedBacks = payload;
         },
         changeUser(state , payload){
-            if(payload.error){
-                state.massage = payload.error;
-                state.massageStatus = ['error']
+            if(!payload){
+
             }else {
                 state.users = payload;
                 state.massageStatus = ['info'];

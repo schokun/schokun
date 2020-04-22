@@ -1,12 +1,12 @@
 <template>
     <div class="base-demo container">
-        <router-link :to="{name: 'createPost'}" class="btn-success add_user btn" tag="button">Создать пост</router-link>
         <table class="table">
             <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Заголовок</th>
                 <th scope="col">Категория</th>
+                <th scope="col">Стаус</th>
                 <th scope="col">Автор</th>
                 <th scope="col">Действие</th>
             </tr>
@@ -16,6 +16,8 @@
                 <th scope="row">{{ index + 1 }}</th>
                 <td>{{ post.title}}</td>
                 <td> {{  post.category.name  }}</td>
+                <td v-if="post.moderate === 0"> Не опубликован</td>
+                <td v-else>опубликован</td>
                 <td>{{ post.user.name }}</td>
                 <td>
                     <button
@@ -23,19 +25,19 @@
                         class="btn-danger"
                         data-toggle="modal"
                         data-target="#delModal"
+                        @click="delPost(post.id)"
                     >
                         Удалить
                     </button>
 
 
-                    <button
-                        type="button"
+                    <router-link
+                        tag="button"
                         class="btn-primary"
-                        data-toggle="modal"
-                        data-target="#editModal"
+                        :to="{name: 'PostsInfo' , params: { id: post.id}}"
                     >
-                        Редактировать
-                    </button>
+                        Просмотр
+                    </router-link>
                 </td>
             </tr>
             </tbody>
@@ -63,6 +65,12 @@
         methods: {
             getResults(page = 1) {
                 this.$store.dispatch('getPosts', page)
+            },
+            delPost(id) {
+                let confirms = confirm('Вы действительно хотите удалить пост?');
+                if (confirms) {
+                    this.$store.dispatch('delPost' , id)
+                }
             }
         },
         created() {
@@ -75,12 +83,6 @@
     .pagination {
         position: absolute;
         top: 350px;
-    }
-
-    .add_user {
-        position: absolute;
-        left: 280px;
-        top: 22px;
     }
 
     .base-demo {

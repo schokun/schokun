@@ -3,6 +3,7 @@
         <CreateUser></CreateUser>
         <ModalDel :id="user_id"></ModalDel>
         <ModalEdit :id = "user_id"> </ModalEdit>
+        <input  class="d-none" type="checkbox" v-model="sort" @change="filter()">
         <button
             type="button"
             class="btn-success add_user btn"
@@ -72,6 +73,7 @@
         data() {
             return {
                 user_id: 0,
+                sort: ''
             }
         },
         computed: {
@@ -85,6 +87,11 @@
             },
             getResults(page = 1) {
               this.$store.dispatch('users' , page)
+            },
+            filter(){
+                this.$store.dispatch('filter' ,{
+                    sort:  this.sort
+                })
             }
         },
         created() {

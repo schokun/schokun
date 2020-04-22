@@ -18,8 +18,7 @@ class PostController extends IndexController
     public function index()
     {
         $user = $this->userInfo;
-        $user_id = $user->id;
-        $posts =  Post::where('user_id' , $user_id)->get();
+        $posts =  Post::where('user_id' , $this->userInfo->id)->get();
 
         return view('user.post.index' , compact('posts' , 'user'));
     }

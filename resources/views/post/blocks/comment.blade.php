@@ -4,14 +4,14 @@
             <div>
                 <div class="user-photo">
                     <img class="w-100"
-                         src="http://1.gravatar.com/avatar/db545eb0352e0b2cd6d15b304783dcc9?s=120&d=mm&r=g"
+                         src="/storage/{{$comment->user->image->path}}"
                          alt="">
                 </div>
             </div>
             <div>
                 <div class="user-name"> {{ $comment->user->name }}</div>
                 <div class="comment-time">
-                    {{ $comment->instanceTime($comment->created_at) }}
+                    {{ $comment->Time }}
                 </div>
                 <div class="user-comment mt-1"><p>{{ $comment->text }}</p></div>
             </div>

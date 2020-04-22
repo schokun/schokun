@@ -45,7 +45,7 @@ $(document).ready(function () {
             success(data) {
                 $(el.target).addClass('disabled').removeClass('send_btn').attr('disabled', 'disabled');
                 $('.number-comments').html(data.count);
-
+                $('.count_comment-val').html(data.count);
                 if (parent_id > 0) {
                     $(`[data-id = ${parent_id}]`).parent().parent().parent().parent().append(data.html)
                 } else {
@@ -104,6 +104,7 @@ $(document).ready(function () {
                     $(`[data-coment="${id}"]`).parent().remove();
                 }
                 $('.number-comments').html(data.count);
+                $('.count_comment-val').html(data.count);
             }
         })
     };

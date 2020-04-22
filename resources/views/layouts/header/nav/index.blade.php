@@ -11,7 +11,7 @@
 {{--        </a>--}}
         <div class="logo">
             <a href="/">
-                <img src="https://hyperhost.ua/info/wp-content/themes/bootstrap-basic4/assets/img/logo-go-to-blog.png" alt="">
+                <img src="http://virtus.wgl-demo.net/wp-content/uploads/2019/12/logo02.png" alt="">
             </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -20,17 +20,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-{{--                <li class="nav-item {{ Route::is('home') ? 'active' : '' }}">--}}
-{{--                    <a class="nav-link" href="/">Главная <span class="sr-only">(current)</span></a>--}}
-{{--                </li>--}}
                 @auth
                     @if (Auth::user()->role->name == 'Админ')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('dashboard' , 'users') }}">Админка</a>
                         </li>
                     @endif
-                    <li class="nav-item {{ Route::is('auth*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('auth.stats') }}">Личный кабинет</a>
+                    <li class="nav-item ml-0 {{ Route::is('auth*') ? 'active' : '' }}">
+                        <a class="nav-link ml-0" href="{{ route('auth.post.index') }}">Личный кабинет</a>
                     </li>
                 @endauth
             </ul>
